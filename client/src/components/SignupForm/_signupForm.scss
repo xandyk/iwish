@@ -1,0 +1,54 @@
+.container {
+  margin: 3rem;
+}
+
+.segment {
+  height: 400px;
+  // min-width: 300px;
+  padding: 3rem;
+  background-color: #ffbaba;
+
+  // border: 1px solid black;
+}
+
+h3 {
+  color: #4e4e4e;
+}
+
+body {
+  // height: 100%;
+  background-color: #06623b;
+}
+
+.button {
+  border-radius: 30px;
+  border: none;
+  background-color: #06623b;
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #48a928;
+}
+
+.label,
+h2 {
+  color: #75080c !important;
+  margin-bottom: 1.5rem;
+}
+
+@include medium {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include big {
+}
+
+@include large {
+}

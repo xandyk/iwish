@@ -1,10 +1,7 @@
-@import '../components/UserForm/_userForm';
-@import '../components/Navbar/_navbar';
-
 // Variables
 $darkgreen: #173305;
 $lightgreen: #4ba928;
-$darkRed: #bb2528;
+$darkred: #bb2528;
 $orange: #ea4630;
 $yellow: #f8b229;
 
@@ -41,8 +38,18 @@ li {
   }
 }
 
+@mixin big {
+  @media only screen and (min-width: 1220px) {
+    @content;
+  }
+}
+
 @mixin large {
   @media only screen and (min-width: 1440px) {
     @content;
   }
 }
+
+@import '../components/Navbar/_navbar';
+@import '../components/SignupForm/_signupForm';
+@import '../components/LoginForm/loginForm';

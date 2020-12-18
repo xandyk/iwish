@@ -1,5 +1,7 @@
 .App {
   /* background-color: #adce74; */
-  background-color: #effad3;
-  min-height: 100vh;
+  /* background-color: seagreen; */
+  background-color: #06623b;
+  overflow-x: hidden;
+  height: 100%;
 }
