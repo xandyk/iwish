@@ -1,0 +1,32 @@
+.container {
+  margin: 3rem;
+}
+
+.segment {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: pink;
+}
+
+h3 {
+  color: #4e4e4e;
+}
+
+.button {
+  border-radius: 50px;
+  border: none;
+  background-color: darkseagreen;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  padding: 12px 28px;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: darkslategray;
+}
+
+.label {
+  color: darkslategray !important;
+}
