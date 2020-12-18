@@ -1,23 +1,48 @@
-// @import "../components/Navbar/_Navbar"
+@import '../components/UserForm/_userForm';
+@import '../components/Navbar/_navbar';
 
+// Variables
+$darkgreen: #173305;
+$lightgreen: #4ba928;
+$darkRed: #bb2528;
+$orange: #ea4630;
+$yellow: #f8b229;
 
-html,
+// Global Style
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
-  line-height: 1.8rem;
-  height: 100vh;
-  box-sizing: border-box;
-  background-color: $antiqueWhite;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* Media Query */
+@mixin medium {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
 }

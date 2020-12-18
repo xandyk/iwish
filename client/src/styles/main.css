@@ -1,1 +1,92 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+.container {
+  margin: 3rem;
+}
+
+.segment {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: pink;
+}
+
+h3 {
+  color: #4e4e4e;
+}
+
+.button {
+  border-radius: 50px;
+  border: none;
+  background-color: darkseagreen;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  padding: 12px 28px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: darkslategray;
+}
+
+.label {
+  color: darkslategray !important;
+}
+
+.navbar {
+  background-color: #146b3a;
+  width: 100vw;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .logo {
+  margin-left: 3rem;
+  font-size: 24px;
+  color: gold;
+}
+
+.item {
+  margin-right: 3rem;
+  padding: 5px 12px;
+  background-color: orangered;
+  border-radius: 20px;
+}
+
+.link {
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Media Query */
+/*# sourceMappingURL=main.css.map */
