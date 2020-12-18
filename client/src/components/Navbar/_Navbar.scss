@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #146b3a;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    margin-left: 3rem;
+    font-size: 24px;
+    color: gold;
+  }
+}
+
+.item {
+  margin-right: 3rem;
+  padding: 5px 12px;
+  background-color: orangered;
+  border-radius: 20px;
+}
+
+.link {
+  color: white;
+}
