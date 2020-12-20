@@ -25,6 +25,7 @@ const UserSchema = new Schema({
     type: String,
     trim: true,
     required: true,
+    minLength: 4,
   },
   created_date: {
     type: Date,
@@ -36,10 +37,10 @@ const UserSchema = new Schema({
 UserSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   if (!user) {
-    throw new Error('Unable to login');
+    throw new Error('Unable to log in');
   }
 
-  const isMatch = await bcrypt.compare(password, user.password); // plain text and hashed pw
+  const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     throw new Error('Unable to login');
   }
@@ -56,4 +57,4 @@ UserSchema.pre('save', async function (next) {
   next();
 });
 
-module.exports = mongoose.model('User', UserSchema);
+const User = (module.exports = mongoose.model('User', UserSchema));
