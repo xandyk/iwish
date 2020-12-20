@@ -33,7 +33,6 @@ const UserSchema = new Schema({
 });
 
 // Find users
-
 UserSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email });
   // User does not exit
