@@ -1,5 +1,6 @@
 const express = require('express');
 const User = require('../models/userModel');
+const auth = require('../middleware/auth');
 const router = new express.Router();
 
 // Create a new user -- TESTED
@@ -7,8 +8,9 @@ router.post('/users', async (req, res) => {
   const user = new User(req.body);
 
   try {
-    const token = await user.generateAuthToken();
     await user.save();
+    const token = await user.generateAuthToken();
+
     res.status(201).send({ user, token });
   } catch (e) {
     res.status(400).send(e);
@@ -26,14 +28,33 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-// GET all users -- TESTED
-router.get('/users', async (req, res) => {
+//Logout user (for a specific device)
+router.post('/users/logout', auth, async (req, res) => {
   try {
-    const users = await User.find({});
-    res.send(users);
+    req.user.tokens = req.user.tokens.filter(token => {
+      return token.token !== req.token;
+    });
+    await req.user.save();
+    res.send();
   } catch (e) {
     res.status(500).send();
   }
+});
+
+// Logout ALL users(devices)
+router.post('/users/logoutAll', auth, async (req, res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.send();
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
+// GET a single profile when logged in -- TESTED
+router.get('/users/me', auth, async (req, res) => {
+  res.send(req.user);
 });
 
 // Update a user -- TESTED
