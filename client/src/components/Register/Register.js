@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const url = 'http://localhost:8000';
 
-class Register extends Component {
+const Register =() {
   state = {
     name: '',
     email: '',
