@@ -4,12 +4,14 @@ import axios from 'axios';
 
 const url = 'http://localhost:8000';
 
-const Register =() {
+class Register extends Component {
   state = {
     name: '',
     email: '',
     password: '',
   };
+
+  // Reset form
 
   submitRegister = async e => {
     e.preventDefault();
@@ -31,6 +33,12 @@ const Register =() {
     } catch (error) {
       alert('Error: This Email is already registered!');
     }
+
+    this.setState({
+      name: '',
+      email: '',
+      password: '',
+    });
   };
 
   render() {
