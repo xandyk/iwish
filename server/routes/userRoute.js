@@ -4,7 +4,7 @@ const auth = require('../middleware/auth');
 const router = new express.Router();
 
 // Create a new user -- TESTED
-router.post('/users', async (req, res) => {
+router.post('/register', async (req, res) => {
   const user = new User(req.body);
 
   try {
@@ -18,7 +18,7 @@ router.post('/users', async (req, res) => {
 });
 
 // Login -- TESTED
-router.post('/users/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const user = await User.findByCredentials(req.body.email, req.body.password);
     const token = await user.generateAuthToken();
@@ -29,7 +29,7 @@ router.post('/users/login', async (req, res) => {
 });
 
 //Logout user (for a specific device)
-router.post('/users/logout', auth, async (req, res) => {
+router.post('/logout', auth, async (req, res) => {
   try {
     req.user.tokens = req.user.tokens.filter(token => {
       return token.token !== req.token;
@@ -42,7 +42,7 @@ router.post('/users/logout', auth, async (req, res) => {
 });
 
 // Logout ALL users(devices)
-router.post('/users/logoutAll', auth, async (req, res) => {
+router.post('/logoutAll', auth, async (req, res) => {
   try {
     req.user.tokens = [];
     await req.user.save();
@@ -53,12 +53,12 @@ router.post('/users/logoutAll', auth, async (req, res) => {
 });
 
 // GET a single profile when logged in -- TESTED
-router.get('/users/me', auth, async (req, res) => {
+router.get('/me', auth, async (req, res) => {
   res.send(req.user);
 });
 
 // Update a user -- TESTED
-router.patch('/users/me', auth, async (req, res) => {
+router.patch('/me', auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'email', 'password'];
   const isValidOperation = updates.every(update => allowedUpdates.includes(update));
