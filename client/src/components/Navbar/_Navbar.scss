@@ -1,27 +1,28 @@
-.navbar {
-  background-color: #1d6115;
-  // background-color: seagreen;
-  // border: 1px solid white;
-  width: 100%;
-  height: 10vh;
+nav {
+  min-height: 10vh;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
-  .logo {
+  h3 {
     margin-left: 3rem;
     font-size: 24px;
-    color: gold;
+    color: white;
+    margin-bottom: unset;
+  }
+
+  li {
+    color: white;
+  }
+
+  ul {
+    margin-right: 3rem;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
   }
 }
 
-.item {
-  margin-right: 3rem;
-  padding: 5px 12px;
-  background-color: orangered;
-  border-radius: 20px;
-}
-
-.link {
-  color: white;
+@include medium {
 }

@@ -4,7 +4,7 @@ const auth = require('../middleware/auth');
 const router = new express.Router();
 
 // Create new message -- TESTED
-router.post('/messages', auth, async (req, res) => {
+router.post('/messages/add', auth, async (req, res) => {
   const message = new Message({ ...req.body, owner: req.user._id });
 
   try {
